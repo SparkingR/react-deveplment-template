@@ -45,7 +45,7 @@ Total = 10
 
 
 ### DevDependencies
-Total = 43
+Total = 44
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -78,12 +78,13 @@ Total = 43
 - extract-text-webpack-plugin
 - case-sensitive-paths-webpack-plugin
 
-#### babel loader = 5
+#### babel loader = 6
 - babel-loader
 - babel-preset-es2015
 - babel-preset-react
 - babel-preset-react-hmre
 - babel-preset-stage-0
+- babel-plugin-import
 
 #### css/scss/sass loader = 8
 - style-loader
