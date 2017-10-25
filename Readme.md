@@ -45,7 +45,7 @@ Total = 10
 
 
 ### DevDependencies
-Total = 34
+Total = 43
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -94,6 +94,17 @@ Total = 34
 - rucksack-css
 - sass-loader
 - node-sass
+
+#### stylelint = 9
+- stylelint
+- stylelint-config-recess-order
+- stylelint-config-sass-guidelines
+- stylelint-config-standard
+- stylelint-config-css-modules
+- stylelint-order
+- stylelint-scss
+- stylelint-webpack-plugin
+- stylelint-formatter-table
 
 #### other loaders = 2
 - file-loader

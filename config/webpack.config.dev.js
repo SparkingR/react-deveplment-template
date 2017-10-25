@@ -7,6 +7,8 @@ const autoprefixer = require('autoprefixer');
 const rucksackCss = require('rucksack-css');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const stylelintFormatterTable = require('stylelint-formatter-table');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const constants = require('./webpack.config.constants');
 
@@ -548,6 +550,11 @@ module.exports = {
       title: constants.htmlTitle,
       filename: 'index.html',
       template: resolveApp('config/index.template.html'),
+    }),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc.json',
+      files: 'src/**/*.s?(a|c)ss',
+      formatter: stylelintFormatterTable,
     }),
 
     // Reference from create-react-app:
