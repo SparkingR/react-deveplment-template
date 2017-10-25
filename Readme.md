@@ -1,5 +1,5 @@
 # react-development-template
-My react development template with redux builded by webpack and express.
+My react development template with redux built by webpack and express.
 
 ## Installation
 ```shell=
@@ -15,11 +15,10 @@ npm start
 ### Production
 ```shell=
 # for production
-# TODO
+npm run build
 ```
 
 ## Used Package
-
 ### Dependencies
 Total = 10
 
@@ -45,24 +44,11 @@ Total = 10
 
 
 ### DevDependencies
-Total = 45
+Total = 48
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
 - redux-logger
-
-#### eslint = 7
-- babel-eslint
-- eslint
-- eslint-config-airbnb
-- eslint-plugin-import
-- eslint-plugin-jsx-a11y
-- eslint-plugin-react
-- eslint-import-resolver-webpack
-
-#### eslint loader = 2
-- eslint-loader
-- eslint-friendly-formatter
 
 #### server = 1
 - express
@@ -78,6 +64,24 @@ Total = 45
 - extract-text-webpack-plugin
 - case-sensitive-paths-webpack-plugin
 
+#### eslint = 7
+- babel-eslint
+- eslint
+- eslint-config-airbnb
+- eslint-plugin-import
+- eslint-plugin-jsx-a11y
+- eslint-plugin-react
+- eslint-import-resolver-webpack
+
+#### prettier = 3
+- prettier
+- eslint-plugin-prettier
+- eslint-config-prettier
+
+#### eslint loader = 2
+- eslint-loader
+- eslint-friendly-formatter
+
 #### babel loader = 6
 - babel-loader
 - babel-preset-es2015
@@ -85,16 +89,6 @@ Total = 45
 - babel-preset-react-hmre
 - babel-preset-stage-0
 - babel-plugin-import
-
-#### css/scss/sass loader = 8
-- style-loader
-- css-loader
-- postcss-loader
-- postcss-flexbugs-fixes
-- autoprefixer
-- rucksack-css
-- sass-loader
-- node-sass
 
 #### stylelint = 9
 - stylelint
@@ -107,6 +101,16 @@ Total = 45
 - stylelint-webpack-plugin
 - stylelint-formatter-table
 
+#### css/scss/sass loader = 8
+- style-loader
+- css-loader
+- postcss-loader
+- postcss-flexbugs-fixes
+- autoprefixer
+- rucksack-css
+- sass-loader
+- node-sass
+
 #### other loaders = 2
 - file-loader
 - url-loader
@@ -118,24 +122,19 @@ Total = 45
 ## Future Work
 
 - flow
+- babel-preset-flow
+- babel-preset-env
+-----
 - redux-saga
 - redux-observable
 - recompose
 - apollo
-
-- babel-preset-flow
-- babel-preset-env
-
 - styled-component
-
 - testing ( jest, mocha or something else )
-
 - styleguidist/storybook
 - esDoc
-
 - ci/cd
   - drone ci or circle ci
   - build script
   - depolyment script
-
 - yarn.lock

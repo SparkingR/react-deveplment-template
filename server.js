@@ -12,12 +12,14 @@ const compiler = webpack(config);
 compiler.apply(new DashboardPlugin());
 
 app.use('/static', express.static(path.resolve(__dirname, '/dist')));
-app.use(require('webpack-dev-middleware')(compiler, {
-  publicPath: config.output.publicPath,
-  stats: {
-    colors: true,
-  },
-}));
+app.use(
+  require('webpack-dev-middleware')(compiler, {
+    publicPath: config.output.publicPath,
+    stats: {
+      colors: true,
+    },
+  }),
+);
 
 app.use(require('webpack-hot-middleware')(compiler));
 
@@ -39,11 +41,13 @@ app.use('*', (req, res, next) => {
   });
 });
 
-app.listen(constants.serverPort, constants.serverHost, (err) => {
+app.listen(constants.serverPort, constants.serverHost, err => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log(`Listening at http://${constants.serverHost}:${constants.serverPort}`);
+  console.log(
+    `Listening at http://${constants.serverHost}:${constants.serverPort}`,
+  );
 });
