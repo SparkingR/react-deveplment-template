@@ -45,19 +45,24 @@ Total = 10
 
 
 ### DevDependencies
-Total = 31
+Total = 34
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
 - redux-logger
 
-#### eslint = 6
+#### eslint = 7
 - babel-eslint
 - eslint
 - eslint-config-airbnb
 - eslint-plugin-import
 - eslint-plugin-jsx-a11y
 - eslint-plugin-react
+- eslint-import-resolver-webpack
+
+#### eslint loader = 2
+- eslint-loader
+- eslint-friendly-formatter
 
 #### server = 1
 - express

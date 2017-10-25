@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const eslintFormatter = require('eslint-friendly-formatter');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer');
 const rucksackCss = require('rucksack-css');
@@ -285,6 +286,22 @@ module.exports = {
     //   3. 写一个支持svg的loader
     //      https://xiaoiver.github.io/coding/2017/07/14/%E5%86%99%E4%B8%80%E4%B8%AA%E6%94%AF%E6%8C%81svg%E7%9A%84loader.html
     rules: [
+      // Reference from create-react-app:
+      //   First, run the linter.
+      //   It's important to do this before Babel processes the JS.
+      {
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: require.resolve('eslint-loader'),
+            options: {
+              formatter: eslintFormatter,
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
 
       // Reference from create-react-app:
       //   "oneOf" will traverse all following loaders until one will
