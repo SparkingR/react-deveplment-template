@@ -21,7 +21,7 @@ npm start
 ## Used Package
 
 ### Dependencies
-Total = 9
+Total = 10
 
 #### react = 3
 - react
@@ -39,12 +39,13 @@ Total = 9
 #### redux middleware = 1
 - redux-thunk
 
-#### utils = 1
+#### utils = 2
+- minimist
 - classnames
 
 
 ### DevDependencies
-Total = 8
+Total = 31
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -57,3 +58,38 @@ Total = 8
 - eslint-plugin-import
 - eslint-plugin-jsx-a11y
 - eslint-plugin-react
+
+#### server = 1
+- express
+
+#### webpack = 4
+- webpack
+- webpack-dashboard
+- webpack-dev-middleware
+- webpack-hot-middleware
+
+#### webpack plugins = 3
+- html-webpack-plugin
+- extract-text-webpack-plugin
+- case-sensitive-paths-webpack-plugin
+
+#### babel loader = 5
+- babel-loader
+- babel-preset-es2015
+- babel-preset-react
+- babel-preset-react-hmre
+- babel-preset-stage-0
+
+#### css/scss/sass loader = 8
+- style-loader
+- css-loader
+- postcss-loader
+- postcss-flexbugs-fixes
+- autoprefixer
+- rucksack-css
+- sass-loader
+- node-sass
+
+#### other loaders = 2
+- file-loader
+- url-loader
