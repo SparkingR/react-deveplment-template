@@ -45,7 +45,7 @@ Total = 10
 
 
 ### DevDependencies
-Total = 44
+Total = 45
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -110,3 +110,32 @@ Total = 44
 #### other loaders = 2
 - file-loader
 - url-loader
+
+#### utils = 1
+- husky
+
+
+## Future Work
+
+- flow
+- redux-saga
+- redux-observable
+- recompose
+- apollo
+
+- babel-preset-flow
+- babel-preset-env
+
+- styled-component
+
+- testing ( jest, mocha or something else )
+
+- styleguidist/storybook
+- esDoc
+
+- ci/cd
+  - drone ci or circle ci
+  - build script
+  - depolyment script
+
+- yarn.lock

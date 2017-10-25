@@ -7,6 +7,11 @@
   "author": "",
   "main": "index.js",
   "scripts": {
+    "precommit": "npm run eslint && npm run stylelint",
+    "eslint": "eslint src",
+    "stylelint": "stylelint src/**/*.scss src/**/*.css",
+    "start": "node server.js",
+    "start:webpack-dashboard": "webpack-dashboard -- node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -44,6 +49,7 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "node-sass": "^4.5.3",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.8",
