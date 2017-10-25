@@ -1,0 +1,41 @@
+/* stylelint-disable max-nesting-depth */
+
+.app {
+  text-align: center;
+
+  .app-header {
+    height: 150px;
+    padding: 20px;
+    color: #fff;
+    background: linear-gradient(141deg, #000 25%, #dba01f 51%, #000 75%);
+
+    .app-logo {
+      height: 80px;
+      animation: app-logo-spin infinite 20s linear;
+    }
+
+    .app-title {
+      font-size: 1.5em;
+    }
+  }
+
+  .app-intro {
+    font-size: large;
+  }
+}
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:global {
+  .global-font-color {
+    color: #3838a5;
+  }
+}
