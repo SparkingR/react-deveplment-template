@@ -20,7 +20,7 @@ npm run build
 
 ## Used Package
 ### Dependencies
-Total = 10
+Total = 11
 
 #### react = 3
 - react
@@ -38,13 +38,16 @@ Total = 10
 #### redux middleware = 1
 - redux-thunk
 
+#### styles = 1
+- normalize.css
+
 #### utils = 2
 - minimist
 - classnames
 
 
 ### DevDependencies
-Total = 48
+Total = 49
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -115,8 +118,9 @@ Total = 48
 - file-loader
 - url-loader
 
-#### utils = 1
+#### utils = 2
 - husky
+- lint-staged
 
 
 ## Future Work

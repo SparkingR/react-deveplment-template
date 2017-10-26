@@ -7,17 +7,23 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run eslint && npm run stylelint",
-    "eslint": "eslint src",
+    "precommit": "lint-staged",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint src/**/*.{js,jsx}",
     "eslint:conflict-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
-    "stylelint": "stylelint src/**/*.scss src/**/*.css",
+    "stylelint": "stylelint src/**/*.{css,scss}",
     "start": "node server.js",
     "start:webpack-dashboard": "webpack-dashboard -- node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint",
+    "src/**/*.{css,scss}": "stylelint"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "minimist": "^1.2.0",
+    "normalize.css": "^7.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -53,6 +59,7 @@
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
     "node-sass": "^4.5.3",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.8",

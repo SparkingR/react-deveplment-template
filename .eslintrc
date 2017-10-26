@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [ "airbnb", "prettier", "prettier/react"],
+  "extends": [ "airbnb", "prettier", "prettier/flowtype", "prettier/react"],
   "env": {
     "browser": true,
     "node": true
@@ -24,9 +24,10 @@
     // }],
     "prettier/prettier": [ "error", {
       "singleQuote": true,
-      "trailingComma": "all",
+      "trailingComma": "es5",
       "bracketSpacing": true,
-      "jsxBracketSameLine": true
+      "jsxBracketSameLine": true,
+      "parser": "flow"
     }]
   },
   "plugins": [

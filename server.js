@@ -18,7 +18,7 @@ app.use(
     stats: {
       colors: true,
     },
-  }),
+  })
 );
 
 app.use(require('webpack-hot-middleware')(compiler));
@@ -48,6 +48,6 @@ app.listen(constants.serverPort, constants.serverHost, err => {
   }
 
   console.log(
-    `Listening at http://${constants.serverHost}:${constants.serverPort}`,
+    `Listening at http://${constants.serverHost}:${constants.serverPort}`
   );
 });
