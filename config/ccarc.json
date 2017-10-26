@@ -1,0 +1,16 @@
+{
+  "type": "custom",
+  "path": "./src/components",
+  "jsExtension": "js",
+  "cssExtension": "scss",
+  "includeTests": false,
+  "includeStories": false,
+  "indexFile": true,
+  "connected": false,
+  "componentMethods": [
+      "componentDidMount"
+  ],
+  "fileNames": {
+  },
+  "templatesPath": "./config/ccarcTemplates"
+}

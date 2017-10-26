@@ -14,6 +14,7 @@
     "stylelint": "stylelint src/**/*.{css,scss}",
     "start": "node server.js",
     "start:webpack-dashboard": "webpack-dashboard -- node server.js",
+    "make-componment": "create-component-app --config ./config/ccarc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
