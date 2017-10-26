@@ -361,6 +361,7 @@ module.exports = {
           //         importLoaders: 1,
           //         sourceMap: true,
           //         modules: true,
+          //         localIdentName: '[path][name]__[local]--[hash:base64:5]',
           //         // minimize: true,
           //       },
           //     },
