@@ -11,7 +11,7 @@ const compiler = webpack(config);
 
 compiler.apply(new DashboardPlugin());
 
-app.use('/static', express.static(path.resolve(__dirname, '/dist')));
+app.use('/', express.static(path.resolve(__dirname, '/dist')));
 app.use(
   require('webpack-dev-middleware')(compiler, {
     publicPath: config.output.publicPath,

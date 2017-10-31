@@ -9,12 +9,10 @@ npm install
 ## Usage
 ### Development
 ```shell=
-# for development
 npm start
 ```
 ### Production
 ```shell=
-# for production
 npm run build
 ```
 
@@ -47,7 +45,7 @@ Total = 11
 
 
 ### DevDependencies
-Total = 49
+Total = 53
 
 #### react redux dev-tool = 2
 - redux-devtools-extension
@@ -62,10 +60,12 @@ Total = 49
 - webpack-dev-middleware
 - webpack-hot-middleware
 
-#### webpack plugins = 3
+#### webpack plugins = 5
 - html-webpack-plugin
 - extract-text-webpack-plugin
 - case-sensitive-paths-webpack-plugin
+- uglifyjs-webpack-plugin
+- favicons-webpack-plugin
 
 #### eslint = 7
 - babel-eslint
@@ -118,10 +118,11 @@ Total = 49
 - file-loader
 - url-loader
 
-#### utils = 2
+#### utils = 4
 - husky
 - lint-staged
-
+- rimraf
+- cross-env
 
 ## Future Work
 

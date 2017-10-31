@@ -124,7 +124,7 @@ module.exports = {
     // Other:
     //   1. When using the ExtractTextWebpackPlugin, use [contenthash]
     //      to obtain a hash of the extracted file (neither[hash] nor [chunkhash] work).
-    filename: 'bundle.js',
+    filename: 'static/js/bundle.js',
 
     // Official URL:
     //   https://webpack.js.org/configuration/output/#output-publicpath
@@ -165,7 +165,7 @@ module.exports = {
     //      https://ithelp.ithome.com.tw/articles/10187242
     //   2. Public Path(公共路径)
     //      http://www.css88.com/doc/webpack/guides/public-path/
-    publicPath: `http://${constants.serverHost}:${constants.serverPort}/static/`,
+    publicPath: `http://${constants.serverHost}:${constants.serverPort}/`,
 
     // Official URL:
     //   https://webpack.js.org/configuration/output/#output-pathinfo
@@ -293,6 +293,7 @@ module.exports = {
       //   It's important to do this before Babel processes the JS.
       {
         test: /\.(js|jsx)$/,
+        include: /src/,
         enforce: 'pre',
         use: [
           {
@@ -302,13 +303,12 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
       },
 
       // Reference from create-react-app:
       //   "oneOf" will traverse all following loaders until one will
       //   match the requirements. When no loader matches it will fall
-      //   back to the "file" loader at the end of the loader list.{
+      //   back to the "file" loader at the end of the loader list.
       {
         oneOf: [
           {
@@ -319,6 +319,22 @@ module.exports = {
             //   4. The convention is to provide a RegExp or array of RegExps here,
             //      but it's not enforced.
             test: /\.(js|jsx)$/,
+
+            // Description:
+            //   1. Rule.exclude is a shortcut to Rule.resource.exclude.
+            //   2. If you supply a Rule.exclude option, you cannot also supply a Rule.resource.
+            //   3. The Condition must NOT match.
+            //   4. The convention is to provide a RegExp or array of RegExps here,
+            //      but it's not enforced.
+            exclude: /node_modules/,
+
+            // Description:
+            //   1. Rule.exclude is a shortcut to Rule.include.exclude.
+            //   2. If you supply a Rule.include option, you cannot also supply a Rule.resource.
+            //   3. The Condition must match.
+            //   4. The convention is to provide a RegExp or array of RegExps here,
+            //      but it's not enforced.
+            include: /src/,
 
             // Description:
             //   1. Rule.loader is a shortcut to Rule.use: [ { loader } ]
@@ -333,14 +349,6 @@ module.exports = {
               //   directory for faster rebuilds.
               cacheDirectory: true,
             },
-
-            // Description:
-            //   1. Rule.exclude is a shortcut to Rule.resource.exclude.
-            //   2. If you supply a Rule.exclude option, you cannot also supply a Rule.resource.
-            //   3. The Condition must NOT match.
-            //   4. The convention is to provide a RegExp or array of RegExps here,
-            //      but it's not enforced.
-            exclude: /node_modules/,
           },
 
           // Reference from create-react-app:
@@ -360,8 +368,8 @@ module.exports = {
           //       options: {
           //         importLoaders: 1,
           //         sourceMap: true,
-          //         modules: true,
-          //         localIdentName: '[path][name]__[local]--[hash:base64:5]',
+          //         // modules: true,
+          //         // localIdentName: '[path][name]__[local]--[hash:base64:5]',
           //         // minimize: true,
           //       },
           //     },
@@ -400,8 +408,8 @@ module.exports = {
                   options: {
                     importLoaders: 1,
                     sourceMap: true,
-                    modules: true,
-                    localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                    // modules: true,
+                    // localIdentName: '[path][name]__[local]--[hash:base64:5]',
                     // minimize: true,
                   },
                 },
