@@ -16,37 +16,17 @@ const constants = require('./webpack.config.constants');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
-// Reference from create-react-app:
-//   Note: defined here because it will be used more than once.
 const extractCssFilename = 'static/css/[name].[contenthash:8].bundle.css';
-//   Webpack uses `publicPath` to determine where the app is being served from.
-//   It requires a trailing slash, or the file assets will get an incorrect path.
 const outputPublicPath = './';
-//   Some apps do not use client-side routing with pushState.
-//   For these, "homepage" can be set to "." to enable relative asset paths.
 const shouldUseRelativeAssetPaths = outputPublicPath === './';
-//   ExtractTextPlugin expects the build output to be flat.
-//   (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
-//   However, our output is structured with css, js and media folders.
-//   To have this structure working with relative paths, we have to use custom options.
-//   Making sure that the publicPath goes back to to build folder.
 const extractTextPluginPublicPath = shouldUseRelativeAssetPaths
   ? Array(extractCssFilename.split('/').length).join('../')
   : outputPublicPath;
 
-// Reference from create-react-app:
-//   Source maps are resource heavy and can cause out of memory issue for large source files.
-//   預設不產出sourcemap
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true';
 
 module.exports = {
-  // Reference from create-react-app:
-  //   Don't attempt to continue if there are any errors.
   bail: true,
-
-  // 可以控制全域(包含JS與CSS)的sourcemap是否產出
-  // 如果關閉(false)，JS或CSS本身有開啟產生sourcemap也沒用
-  // 如果開啟(true),若JS或CSS本身沒開也不會產出sourcemap
   devtool: shouldUseSourceMap ? 'source-map' : false,
   entry: [resolveApp('src/index.js')],
   output: {
@@ -86,12 +66,6 @@ module.exports = {
             include: /src/,
             loader: 'babel-loader',
             options: {
-              // Official URL:
-              //   https://babeljs.io/docs/usage/api/
-              // Description:
-              //   Do not include superfluous whitespace characters and line terminators.
-              //   When set to "auto" compact is set to true on input sizes of >500KB.
-              //   Default is "auto".
               compact: true,
             },
           },
@@ -238,28 +212,19 @@ module.exports = {
       formatter: stylelintFormatterTable,
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-
-    // Reference from create-react-app:
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
           warnings: false,
-          // Disabled because of an issue with Uglify breaking seemingly valid code:
-          // https://github.com/facebookincubator/create-react-app/issues/2376
-          // Pending further investigation:
-          // https://github.com/mishoo/UglifyJS2/issues/2011
           comparisons: false,
         },
         output: {
           comments: false,
-          // Turned on because emoji and regex is not minified properly using default
-          // https://github.com/facebookincubator/create-react-app/issues/2488
           ascii_only: true,
         },
       },
       sourceMap: shouldUseSourceMap,
     }),
-
     new FaviconsWebpackPlugin({
       logo: resolveApp('src/assets/favicon.png'),
       prefix: 'static/assets/icons-[hash]/',
